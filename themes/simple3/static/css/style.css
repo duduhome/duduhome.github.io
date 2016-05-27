@@ -39,13 +39,7 @@ a:active { color: #1863A1; }
 
 p { margin: 0 0 1em 0; }
 
-h1 {
-    font-weight: normal;
-    color: #87CEEB;
-    line-height: 1em;
-} 
-
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     margin-bottom: 1em;
 }
@@ -183,7 +177,7 @@ li.pagelist:before {
     float: left;
 }
 
-#container .category h2{ color: #CCC; }
+#container .category h2{ color: #CCC; word-wrap: break-word;}
 
 #content h2 { color: #88ACDB; }
 
@@ -265,3 +259,4 @@ table.hlcodetable {
     display: block;
     height: 0;
 }
+
