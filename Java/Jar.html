@@ -5,7 +5,7 @@
         <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <title>Java - </title>
+        <title>Jar - </title>
         <meta name="keywords" content=""/>
         <meta name="description" content=""/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,13 +15,12 @@
         <div id="container">
             
 <div id="header">
-  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Java">Java</a>&nbsp;»&nbsp;Java</div>
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Java">Java</a>&nbsp;»&nbsp;Jar</div>
 </div>
 <div class="clearfix"></div>
-<div id="title">Java</div>
+<div id="title">Jar</div>
   <div id="content">
   <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#jar">JAR</a><ul>
 <li><a href="#jmeterjar">Jmeter的Jar</a><ul>
 <li><a href="#jmeterpom">引入jmeter相关pom依赖</a></li>
 <li><a href="#_1">创建测试类</a></li>
@@ -32,12 +31,9 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 </div>
-<h1 id="jar">JAR</h1>
-<h2 id="jmeterjar">Jmeter的Jar</h2>
-<h3 id="jmeterpom">引入jmeter相关pom依赖</h3>
+<h1 id="jmeterjar">Jmeter的Jar</h1>
+<h2 id="jmeterpom">引入jmeter相关pom依赖</h2>
 <p>将systemPath改为jmeter所在jar包的地址</p>
 <div class="hlcode"><pre> <span class="nt">&lt;dependency&gt;</span>
         <span class="nt">&lt;groupId&gt;</span>com.dianping<span class="nt">&lt;/groupId&gt;</span>
@@ -77,13 +73,13 @@
 </pre></div>
 
 
-<h3 id="_1">创建测试类</h3>
+<h2 id="_1">创建测试类</h2>
 <p>类继承AbstratJavaSampleClinet</p>
 <div class="hlcode"><pre> <span class="n">public</span> <span class="n">class</span> <span class="n">createCase</span> <span class="n">extends</span> <span class="n">AbstractJavaSamplerClient</span><span class="p">{</span><span class="err">。。。</span><span class="p">}</span>
 </pre></div>
 
 
-<h3 id="_2">设置传入的参数</h3>
+<h2 id="_2">设置传入的参数</h2>
 <p>可设置多个参数，设置的参数会在Jmeter的参数列表中展示</p>
 <div class="hlcode"><pre> <span class="n">public</span> <span class="n">Arguments</span> <span class="nf">getDefaultParameters</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">Arguments</span> <span class="n">params</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Arguments</span><span class="p">();</span>
@@ -94,14 +90,14 @@
 </pre></div>
 
 
-<h3 id="_3">初始化方法</h3>
+<h2 id="_3">初始化方法</h2>
 <p>实际运行时每个线程只运行一次，在测试方法前运行</p>
 <div class="hlcode"><pre><span class="c1">//初始化一下数据之类</span>
  <span class="n">public</span> <span class="k">void</span> <span class="n">setupTest</span><span class="p">(</span><span class="n">JavaSamplerContext</span> <span class="n">arg0</span><span class="p">)</span> <span class="p">{</span><span class="err">。。。</span><span class="p">}</span>
 </pre></div>
 
 
-<h3 id="_4">测试方法</h3>
+<h2 id="_4">测试方法</h2>
 <p>测试的循环体，会根据线程数和循环次数的不同执行多次</p>
 <div class="hlcode"><pre> <span class="n">public</span> <span class="n">SampleResult</span> <span class="nf">runTest</span><span class="p">(</span><span class="n">JavaSamplerContext</span> <span class="n">arg0</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">arg0</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&quot;num1&quot;</span><span class="p">);</span><span class="c1">//获取jmeter中设置的参数值</span>
@@ -127,7 +123,7 @@
 </pre></div>
 
 
-<h3 id="_5">结束方法</h3>
+<h2 id="_5">结束方法</h2>
 <p>实际运行时每个线程只运行一次，在测试方法结束后运行</p>
 <div class="hlcode"><pre><span class="n">public</span> <span class="kt">void</span> <span class="nf">teardownTest</span><span class="p">(</span><span class="n">JavaSamplerContext</span> <span class="n">arg0</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;end&quot;</span><span class="p">);</span>
