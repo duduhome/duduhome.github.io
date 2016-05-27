@@ -5,7 +5,7 @@
         <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <title>我的wiki - </title>
+        <title>Java - </title>
         <meta name="keywords" content=""/>
         <meta name="description" content=""/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,36 +15,125 @@
         <div id="container">
             
 <div id="header">
-  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Java">Java</a>&nbsp;»&nbsp;我的wiki</div>
+  <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/#Java">Java</a>&nbsp;»&nbsp;Java</div>
 </div>
 <div class="clearfix"></div>
-<div id="title">我的wiki</div>
+<div id="title">Java</div>
   <div id="content">
-  <h1 id="my-wiki">My Wiki</h1>
-<p>汇总日常收集的小知识，供查阅</p>
-<ul>
-<li>技术知识</li>
-<li>日常小工具</li>
+  <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#jar">JAR</a><ul>
+<li><a href="#jmeterjar">Jmeter的Jar</a><ul>
+<li><a href="#jmeterpom">引入jmeter相关pom依赖</a></li>
+<li><a href="#_1">创建测试类</a></li>
+<li><a href="#_2">设置传入的参数</a></li>
+<li><a href="#_3">初始化方法</a></li>
+<li><a href="#_4">测试方法</a></li>
+<li><a href="#_5">结束方法</a></li>
 </ul>
-<p>Simiki is short for <code>Simple Wiki</code> :)</p>
-<h2 id="java">Java</h2>
-<hr />
-<p>title: "我的Java"
-layout: page
-date: 2099-06-02 00:00</p>
-<hr />
-<h2 id="notepad">Notepad++</h2>
-<hr />
-<p>title: "我的notepad++"
-layout: page
-date: 2099-06-02 00:00</p>
-<hr />
-<h2 id="robot-framework-selenium">Robot Framework Selenium</h2>
-<hr />
-<p>title: "我的RFS"
-layout: page
-date: 2099-06-02 00:00</p>
-<hr />
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="jar">JAR</h1>
+<h2 id="jmeterjar">Jmeter的Jar</h2>
+<h3 id="jmeterpom">引入jmeter相关pom依赖</h3>
+<p>将systemPath改为jmeter所在jar包的地址</p>
+<div class="hlcode"><pre> <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.dianping<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>ApacheJMeter_core<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;systemPath&gt;</span>/Users/zjj/Downloads/apache-jmeter-2.13/lib/ext/ApacheJMeter_core.jar<span class="nt">&lt;/systemPath&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.dianping<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>ApacheJMeter_java<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;systemPath&gt;</span>/Users/zjj/Downloads/apache-jmeter-2.13/lib/ext/ApacheJMeter_java.jar<span class="nt">&lt;/systemPath&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.dianping<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>jorphan<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;systemPath&gt;</span>/Users/zjj/Downloads/apache-jmeter-2.13/lib/jorphan.jar<span class="nt">&lt;/systemPath&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.dianping<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>logger<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;systemPath&gt;</span>/Users/zjj/Downloads/apache-jmeter-2.13/lib/logkit-2.0.jar<span class="nt">&lt;/systemPath&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.dianping<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>avalon<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;scope&gt;</span>system<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;systemPath&gt;</span>/Users/zjj/Downloads/apache-jmeter-2.13/lib/avalon-framework-4.1.4.jar<span class="nt">&lt;/systemPath&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+
+<h3 id="_1">创建测试类</h3>
+<p>类继承AbstratJavaSampleClinet</p>
+<div class="hlcode"><pre> <span class="n">public</span> <span class="n">class</span> <span class="n">createCase</span> <span class="n">extends</span> <span class="n">AbstractJavaSamplerClient</span><span class="p">{</span><span class="err">。。。</span><span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_2">设置传入的参数</h3>
+<p>可设置多个参数，设置的参数会在Jmeter的参数列表中展示</p>
+<div class="hlcode"><pre> <span class="n">public</span> <span class="n">Arguments</span> <span class="nf">getDefaultParameters</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Arguments</span> <span class="n">params</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Arguments</span><span class="p">();</span>
+    <span class="n">params</span><span class="p">.</span><span class="n">addArgument</span><span class="p">(</span><span class="s">&quot;num1&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="n">params</span><span class="p">.</span><span class="n">addArgument</span><span class="p">(</span><span class="s">&quot;num2&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">params</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_3">初始化方法</h3>
+<p>实际运行时每个线程只运行一次，在测试方法前运行</p>
+<div class="hlcode"><pre><span class="c1">//初始化一下数据之类</span>
+ <span class="n">public</span> <span class="k">void</span> <span class="n">setupTest</span><span class="p">(</span><span class="n">JavaSamplerContext</span> <span class="n">arg0</span><span class="p">)</span> <span class="p">{</span><span class="err">。。。</span><span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_4">测试方法</h3>
+<p>测试的循环体，会根据线程数和循环次数的不同执行多次</p>
+<div class="hlcode"><pre> <span class="n">public</span> <span class="n">SampleResult</span> <span class="nf">runTest</span><span class="p">(</span><span class="n">JavaSamplerContext</span> <span class="n">arg0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">arg0</span><span class="p">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s">&quot;num1&quot;</span><span class="p">);</span><span class="c1">//获取jmeter中设置的参数值</span>
+    <span class="n">SampleResult</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SampleResult</span><span class="p">();</span>
+    <span class="n">sr</span><span class="p">.</span><span class="n">setSampleLabel</span><span class="p">(</span><span class="s">&quot;Java请求哦&quot;</span><span class="p">);</span> <span class="c1">//java请求的label，会在jmeter中展示</span>
+    <span class="n">try</span> <span class="p">{</span>
+        <span class="n">sr</span><span class="p">.</span><span class="n">sampleStart</span><span class="p">();</span><span class="c1">// jmeter 开始统计响应时间标记</span>
+        <span class="n">resultData</span><span class="o">=</span><span class="n">cscCaseService</span><span class="p">.</span><span class="n">asyncCreateCscCase</span><span class="p">(</span><span class="n">cscCaseDto</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resultData</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">sr</span><span class="p">.</span><span class="n">setResponseData</span><span class="p">(</span><span class="s">&quot;结果是：&quot;</span><span class="o">+</span><span class="n">resultData</span><span class="p">.</span><span class="n">toString</span><span class="p">(),</span> <span class="n">null</span><span class="p">);</span>
+            <span class="n">sr</span><span class="p">.</span><span class="n">setDataType</span><span class="p">(</span><span class="n">SampleResult</span><span class="p">.</span><span class="n">TEXT</span><span class="p">);</span>
+        <span class="p">}</span>
+         <span class="n">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">resultData</span><span class="p">.</span><span class="n">toString</span><span class="p">());</span>
+        <span class="n">sr</span><span class="p">.</span><span class="n">setSuccessful</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">sr</span><span class="p">.</span><span class="n">setSuccessful</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+        <span class="n">e</span><span class="p">.</span><span class="n">printStackTrace</span><span class="p">();</span>
+    <span class="p">}</span> <span class="n">finally</span> <span class="p">{</span>
+        <span class="n">sr</span><span class="p">.</span><span class="n">sampleEnd</span><span class="p">();</span><span class="c1">// jmeter 结束统计响应时间标记</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="_5">结束方法</h3>
+<p>实际运行时每个线程只运行一次，在测试方法结束后运行</p>
+<div class="hlcode"><pre><span class="n">public</span> <span class="kt">void</span> <span class="nf">teardownTest</span><span class="p">(</span><span class="n">JavaSamplerContext</span> <span class="n">arg0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;end&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The cost is&quot;</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 
         </div>
