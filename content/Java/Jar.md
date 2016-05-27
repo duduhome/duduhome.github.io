@@ -1,13 +1,12 @@
 ---
-title: "Java"
+title: "Jar"
 layout: page
 date: 2099-06-02 00:00
 ---
 [TOC]
-# JAR #
 
-## Jmeter的Jar ##
-### 引入jmeter相关pom依赖 ###
+# Jmeter的Jar #
+## 引入jmeter相关pom依赖 ##
 将systemPath改为jmeter所在jar包的地址
 
 	 <dependency>
@@ -46,13 +45,13 @@ date: 2099-06-02 00:00
             <systemPath>/Users/zjj/Downloads/apache-jmeter-2.13/lib/avalon-framework-4.1.4.jar</systemPath>
         </dependency>
 	
-### 创建测试类 ###
+## 创建测试类 ##
 
 类继承AbstratJavaSampleClinet
 
 	 public class createCase extends AbstractJavaSamplerClient{。。。}
 	
-### 设置传入的参数 ###
+## 设置传入的参数 ##
 可设置多个参数，设置的参数会在Jmeter的参数列表中展示
 
 	 public Arguments getDefaultParameters() {
@@ -62,13 +61,13 @@ date: 2099-06-02 00:00
         return params;
     }
     
-### 初始化方法 ###
+## 初始化方法 ##
 实际运行时每个线程只运行一次，在测试方法前运行
 
 	//初始化一下数据之类
 	 public void setupTest(JavaSamplerContext arg0) {。。。}
 	
-### 测试方法 ###
+## 测试方法 ##
 测试的循环体，会根据线程数和循环次数的不同执行多次
 
 	 public SampleResult runTest(JavaSamplerContext arg0) {
@@ -94,7 +93,7 @@ date: 2099-06-02 00:00
     }
 
 
-### 结束方法 ###
+## 结束方法 ##
 实际运行时每个线程只运行一次，在测试方法结束后运行
 
     public void teardownTest(JavaSamplerContext arg0) {
