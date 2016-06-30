@@ -19,3 +19,5 @@ date: 2099-06-02 00:00
 ##显示数据库中的表
     show tables；
 
+##查看表结构
+    desc table_name
