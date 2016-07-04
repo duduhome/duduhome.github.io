@@ -5,7 +5,7 @@
         <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
         <link rel="Stylesheet" type="text/css" href="/static/css/typo.css">
         <link rel="Stylesheet" type="text/css" href="/static/css/reset_typo.css">
-        <title>Jmeter - </title>
+        <title>Linux mySQL - </title>
         <meta name="keywords" content=""/>
         <meta name="description" content=""/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,41 +17,42 @@
     <div id="header">
         <div id="post-nav">
             
-            <a href="/">Home</a> » <a href="/#Jmeter">Jmeter</a> » Jmeter
+            <a href="/">Home</a> » <a href="/#SQL">SQL</a> » Linux mySQL
             
         </div>
     </div>
     <div class="clearfix"></div>
-    <div id="title">Jmeter</div>
+    <div id="title">Linux mySQL</div>
     <div id="content">
         <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#sso">跳过sso</a></li>
-<li><a href="#java">Java接口测试</a></li>
+<li><a href="#mysql">终端进入mysql</a></li>
+<li><a href="#mysql_1">mysql的操作</a></li>
 </ul>
 </div>
-<h1 id="sso">跳过sso</h1>
-<hr />
-<p>目前仅是美团sso登录使用方法，点评sso登录不可用(需之后了解sso逻辑)</p>
-<p>1.保存cookie，使用firefox的firebug工具</p>
-<p><img alt="cookie" src="/attach/cookie.jpg" /></p>
-<p>2.将cookie导入jmeter的“http cookie 管理器”中</p>
-<p><img alt="jmeter" src="/attach/jmetercookie.jpg" /></p>
-<p>3.发起http请求</p>
-<h1 id="java">Java接口测试</h1>
-<hr />
+<h1 id="mysql">终端进入mysql</h1>
+<div class="hlcode"><pre><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span> <span class="n">password</span>
+</pre></div>
+
+
+<h1 id="mysql_1">mysql的操作</h1>
 <ul>
 <li>
-<p>编写Java脚本，详细请查看：<a href="/Java/Jar.html">java脚本</a></p>
+<p>显示数据库列表</p>
+<p>show databases；</p>
 </li>
 <li>
-<p>将Jar包放入jmeter路径下
-    /lib/ext</p>
+<p>打开数据库</p>
+<p>user database；</p>
 </li>
 <li>
-<p>添加Java请求，自动加载jar包中的类，输入参数即可</p>
+<p>显示数据库中的表</p>
+<p>show tables；</p>
+</li>
+<li>
+<p>查看表结构</p>
+<p>desc table_name</p>
 </li>
 </ul>
-<p><img alt="javajmeter" src="/attach/javajmeter.jpg" /></p>
     </div>
 
         </div>
