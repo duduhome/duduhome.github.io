@@ -23,7 +23,7 @@ date: 2016-05-27 00:00
 
 # Java接口测试 #
 ------
-* 编写Java脚本，详细请查看：[java脚本](/Java/Java.html)
+* 编写Java脚本，详细请查看：[java脚本](/Java/Jar.html)
 
 * 将Jar包放入jmeter路径下
 	/lib/ext

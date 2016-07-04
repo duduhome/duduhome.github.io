@@ -10,14 +10,18 @@ date: 2099-06-02 00:00
 
 #mysql的操作
 
-##显示数据库列表
+* 显示数据库列表
+
     show databases；
 
-##打开数据库
+* 打开数据库
+
     user database；
 
-##显示数据库中的表
+* 显示数据库中的表
+
     show tables；
 
-##查看表结构
+* 查看表结构
+
     desc table_name
