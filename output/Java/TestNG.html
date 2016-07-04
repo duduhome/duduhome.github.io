@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/typo.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/reset_typo.css">
+        <title>TestNg - </title>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container" class="typo">
+            
+    <div id="header">
+        <div id="post-nav">
+            
+            <a href="/">Home</a> » <a href="/#Java">Java</a> » TestNg
+            
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="title">TestNg</div>
+    <div id="content">
+        <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#_1">环境</a></li>
+<li><a href="#_2">基本方法</a></li>
+<li><a href="#_3">运行</a><ul>
+<li><a href="#_4">直接执行</a></li>
+<li><a href="#xml">配置xml</a></li>
+</ul>
+</li>
+<li><a href="#_5">注解</a></li>
+</ul>
+</div>
+<h1 id="_1">环境</h1>
+<div class="hlcode"><pre> <span class="n">Intellij</span> <span class="o">+</span> <span class="n">Java</span>
+</pre></div>
+
+
+<p>jar包依赖  </p>
+<div class="hlcode"><pre> <span class="n">TestNg</span><span class="o">-</span><span class="mf">6.8</span><span class="p">.</span><span class="n">jar</span>
+</pre></div>
+
+
+<h1 id="_2">基本方法</h1>
+<p>创建一个测试类</p>
+<div class="hlcode"><pre> <span class="n">public</span> <span class="n">class</span> <span class="n">testCreateCaseForMovie</span> <span class="p">{</span>
+    <span class="err">@</span><span class="n">BeforeClass</span><span class="p">(</span><span class="n">alwaysRun</span> <span class="o">=</span> <span class="nb">true</span><span class="p">)</span><span class="c1">//测试方法运行之前执行的</span>
+    <span class="n">public</span> <span class="kt">void</span> <span class="n">setUp</span><span class="p">()</span> <span class="n">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+        <span class="n">driver</span> <span class="o">=</span> <span class="n">new</span> <span class="n">FirefoxDriver</span><span class="p">();</span>
+        <span class="n">baseUrl</span> <span class="o">=</span> <span class="s">&quot;http://10.66.59.27:8080&quot;</span><span class="p">;</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">manage</span><span class="p">().</span><span class="n">timeouts</span><span class="p">().</span><span class="n">implicitlyWait</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">TimeUnit</span><span class="p">.</span><span class="n">SECONDS</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="err">@</span><span class="n">Test</span><span class="c1">//主要测试流程</span>
+    <span class="n">public</span> <span class="kt">void</span> <span class="n">test111</span><span class="p">()</span> <span class="n">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">baseUrl</span><span class="p">);</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;login-username&quot;</span><span class="p">)).</span><span class="n">clear</span><span class="p">();</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;login-username&quot;</span><span class="p">)).</span><span class="n">sendKeys</span><span class="p">(</span><span class="s">&quot;alisa.zhao&quot;</span><span class="p">);</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;login-password&quot;</span><span class="p">)).</span><span class="n">clear</span><span class="p">();</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">id</span><span class="p">(</span><span class="s">&quot;login-password&quot;</span><span class="p">)).</span><span class="n">sendKeys</span><span class="p">(</span><span class="s">&quot;Dp16603655&quot;</span><span class="p">);</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">findElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">name</span><span class="p">(</span><span class="s">&quot;commit&quot;</span><span class="p">)).</span><span class="n">click</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="err">@</span><span class="n">AfterClass</span><span class="p">(</span><span class="n">alwaysRun</span> <span class="o">=</span> <span class="nb">true</span><span class="p">)</span><span class="c1">//测试方法结束后执行</span>
+    <span class="n">public</span> <span class="kt">void</span> <span class="n">tearDown</span><span class="p">()</span> <span class="n">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+        <span class="n">driver</span><span class="p">.</span><span class="n">quit</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h1 id="_3">运行</h1>
+<h2 id="_4">直接执行</h2>
+<p>直接右击@test 方法执行</p>
+<h2 id="xml">配置xml</h2>
+<p>按照suilt group class 执行</p>
+<div class="hlcode"><pre> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+    <span class="cp">&lt;!DOCTYPE suite SYSTEM &quot;http://beust.com/testng/testng-1.0.dtd&quot; &gt;</span>
+    <span class="nt">&lt;suite</span> <span class="na">name=</span><span class="s">&quot;suite1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">&quot;test&quot;</span> <span class="na">verbose=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>//verbose是详细程度，10是最详细
+            <span class="nt">&lt;classes&gt;</span>
+                <span class="nt">&lt;class</span> <span class="na">name=</span><span class="s">&quot;com.tgb.test.TestcaseLogin&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/classes&gt;</span>
+        <span class="nt">&lt;/test&gt;</span>
+    <span class="nt">&lt;/suite&gt;</span>
+</pre></div>
+
+
+<h1 id="_5">注解</h1>
+    </div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 .
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+    </body>
+</html>
