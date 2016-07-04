@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b01930f-c4e1-48e0-82da-988098c418d1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/Jmeter/Jmeter.md" afterPath="$PROJECT_DIR$/content/Jmeter/Jmeter.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/SQL/sql2.md" afterPath="$PROJECT_DIR$/content/SQL/sql2.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output" afterPath="$PROJECT_DIR$/output" />
     </list>
     <ignored path="mywiki.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -631,12 +629,12 @@
       <updated>1465991258402</updated>
       <workItem from="1465991260618" duration="1099000" />
       <workItem from="1467273508160" duration="1482000" />
-      <workItem from="1467609345764" duration="709000" />
+      <workItem from="1467609345764" duration="774000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3290000" />
+    <option name="totallyTimeSpent" value="3355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
