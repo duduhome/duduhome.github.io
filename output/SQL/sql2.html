@@ -27,6 +27,10 @@
         <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#mysql">终端进入mysql</a></li>
 <li><a href="#mysql_1">mysql的操作</a></li>
+<li><a href="#mysql_2">本地mysql</a><ul>
+<li><a href="#_1">忘记密码</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <h1 id="mysql">终端进入mysql</h1>
@@ -36,23 +40,59 @@
 
 <h1 id="mysql_1">mysql的操作</h1>
 <ul>
+<li>显示数据库列表</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">show</span> <span class="nx">databases</span>
+</pre></div>
+
+
+<ul>
+<li>打开数据库</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">user</span> <span class="nx">database</span>
+</pre></div>
+
+
+<ul>
+<li>显示数据库中的表</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">show</span> <span class="nx">tables</span>
+</pre></div>
+
+
+<ul>
+<li>查看表结构</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">desc</span> <span class="nx">table_name</span>
+</pre></div>
+
+
+<h1 id="mysql_2">本地mysql</h1>
+<h2 id="_1">忘记密码</h2>
+<ul>
 <li>
-<p>显示数据库列表</p>
-<p>show databases；</p>
+<p>关闭mysql</p>
 </li>
 <li>
-<p>打开数据库</p>
-<p>user database；</p>
-</li>
-<li>
-<p>显示数据库中的表</p>
-<p>show tables；</p>
-</li>
-<li>
-<p>查看表结构</p>
-<p>desc table_name</p>
+<p>进入mysql目录</p>
 </li>
 </ul>
+<div class="hlcode"><pre><span class="nx">cd</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">mysql</span><span class="o">/</span><span class="nx">bin</span>
+</pre></div>
+
+
+<ul>
+<li>获取权限</li>
+</ul>
+<div class="hlcode"><pre><span class="nx">sudo</span> <span class="nx">su</span>
+</pre></div>
+
+
+<ul>
+<li>开启安全模式</li>
+</ul>
+<div class="hlcode"><pre><span class="p">.</span><span class="o">/</span><span class="nx">mysqld_safe</span> <span class="o">--</span><span class="nx">skip</span><span class="o">-</span><span class="nx">grant</span><span class="o">-</span><span class="nx">tables</span> <span class="o">&amp;</span>
+</pre></div>
     </div>
 
         </div>
