@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="Stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/tango.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/typo.css">
+        <link rel="Stylesheet" type="text/css" href="/static/css/reset_typo.css">
+        <title>Linux mySQL - </title>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body>
+        <div id="container" class="typo">
+            
+    <div id="header">
+        <div id="post-nav">
+            
+            <a href="/">Home</a> » <a href="/#SQL">SQL</a> » Linux mySQL
+            
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="title">Linux mySQL</div>
+    <div id="content">
+        <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#mysql">终端进入mysql</a></li>
+<li><a href="#mysql_1">mysql的操作</a></li>
+<li><a href="#mysql_2">本地mysql</a><ul>
+<li><a href="#_1">忘记密码</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="mysql">终端进入mysql</h1>
+<div class="hlcode"><pre><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span> <span class="n">password</span>
+</pre></div>
+
+
+<h1 id="mysql_1">mysql的操作</h1>
+<ul>
+<li>显示数据库列表</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">show</span> <span class="nx">databases</span>
+</pre></div>
+
+
+<ul>
+<li>打开数据库</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">user</span> <span class="nx">database</span>
+</pre></div>
+
+
+<ul>
+<li>显示数据库中的表</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">show</span> <span class="nx">tables</span>
+</pre></div>
+
+
+<ul>
+<li>查看表结构</li>
+</ul>
+<div class="hlcode"><pre>    <span class="nx">desc</span> <span class="nx">table_name</span>
+</pre></div>
+
+
+<h1 id="mysql_2">本地mysql</h1>
+<h2 id="_1">忘记密码</h2>
+<ul>
+<li>
+<p>关闭mysql</p>
+</li>
+<li>
+<p>进入mysql目录</p>
+</li>
+</ul>
+<div class="hlcode"><pre><span class="nx">cd</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">mysql</span><span class="o">/</span><span class="nx">bin</span>
+</pre></div>
+
+
+<ul>
+<li>获取权限</li>
+</ul>
+<div class="hlcode"><pre><span class="nx">sudo</span> <span class="nx">su</span>
+</pre></div>
+
+
+<ul>
+<li>开启安全模式</li>
+</ul>
+<div class="hlcode"><pre><span class="p">.</span><span class="o">/</span><span class="nx">mysqld_safe</span> <span class="o">--</span><span class="nx">skip</span><span class="o">-</span><span class="nx">grant</span><span class="o">-</span><span class="nx">tables</span> <span class="o">&amp;</span>
+</pre></div>
+    </div>
+
+        </div>
+        <div id="footer">
+            <span>
+                Copyright © 2012-2016 .
+                Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
+            </span>
+        </div>
+    </body>
+</html>
