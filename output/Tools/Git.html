@@ -44,7 +44,7 @@
 <li><a href="#_12">创建本地分支</a></li>
 <li><a href="#_13">查看当前分支</a></li>
 <li><a href="#_14">切换分支</a></li>
-<li><a href="#_15">合并分</a></li>
+<li><a href="#_15">合并分支</a></li>
 <li><a href="#_16">删除分支</a></li>
 </ul>
 </li>
@@ -143,6 +143,11 @@
 </pre></div>
 
 
+<p>创建本地分支与远程分支关联，假如本地无mywiki分支，远程存在mywiki分支</p>
+<div class="hlcode"><pre><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">branch_name</span> <span class="n">origin</span><span class="o">/</span><span class="n">branch_name</span>
+</pre></div>
+
+
 <h3 id="_13">查看当前分支</h3>
 <div class="hlcode"><pre><span class="n">git</span> <span class="n">branch</span>
 </pre></div>
@@ -154,7 +159,7 @@
 </pre></div>
 
 
-<h3 id="_15">合并分</h3>
+<h3 id="_15">合并分支</h3>
 <p>合并某分支到当前分支</p>
 <div class="hlcode"><pre><span class="n">git</span> <span class="n">merge</span> <span class="n">name</span>
 </pre></div>
@@ -168,7 +173,7 @@
         </div>
         <div id="footer">
             <span>
-                Copyright © 2012-2016 .
+                Copyright © 2012-2017 .
                 Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.
             </span>
         </div>

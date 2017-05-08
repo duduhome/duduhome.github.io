@@ -78,9 +78,13 @@ date: 2099-06-02 00:00
 	git checkout -b branch_name
 
 相当于
-	
+
 	git branch name
 	git checkout name
+
+创建本地分支与远程分支关联，假如本地无mywiki分支，远程存在mywiki分支
+
+	git checkout -b branch_name origin/branch_name
 
 ###查看当前分支###
 
