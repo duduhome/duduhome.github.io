@@ -30,8 +30,12 @@
 </ul>
 </li>
 <li><a href="#_3">初始化与清理</a><ul>
-<li><a href="#_4">构造器初始化</a><ul>
-<li><a href="#_5">初始化顺序</a></li>
+<li><a href="#_4">构造器内调用构造器</a></li>
+<li><a href="#_5">初始化变量</a></li>
+<li><a href="#_6">初始化顺序</a></li>
+<li><a href="#_7">用法总结</a><ul>
+<li><a href="#finally">finally</a></li>
+<li><a href="#final">final</a></li>
 </ul>
 </li>
 </ul>
@@ -63,12 +67,113 @@
 </li>
 </ul>
 <h1 id="_3">初始化与清理</h1>
-<h2 id="_4">构造器初始化</h2>
-<h3 id="_5">初始化顺序</h3>
+<h2 id="_4">构造器内调用构造器</h2>
+<ul>
+<li>
+<p>构造器调用必须在构造器的起始处</p>
+</li>
+<li>
+<p>构造器内只能调用一个构造器</p>
+</li>
+</ul>
+<h2 id="_5">初始化变量</h2>
+<ul>
+<li>
+<p>类成员变量会被初始化</p>
+<div class="hlcode"><pre><span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">s</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">f</span><span class="p">;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>方法的成员变量需要强制初始化，若如上则会报错</p>
+</li>
+</ul>
+<h2 id="_6">初始化顺序</h2>
+<p>类初始化：</p>
 <ol>
-<li>变量：根据变量定义的顺序初始化；</li>
-<li></li>
+<li>
+<p>父类--静态变量</p>
+</li>
+<li>
+<p>父类--静态初始化块</p>
+</li>
+<li>
+<p>子类--静态变量</p>
+</li>
+<li>
+<p>子类--静态初始化块</p>
+</li>
+<li>
+<p>父类--变量</p>
+</li>
+<li>
+<p>父类--初始化块</p>
+</li>
+<li>
+<p>父类--构造器</p>
+</li>
+<li>
+<p>子类--变量</p>
+</li>
+<li>
+<p>子类--初始化块</p>
+</li>
+<li>
+<p>子类--构造器</p>
+</li>
 </ol>
+<h2 id="_7">用法总结</h2>
+<h3 id="finally">finally</h3>
+<div class="hlcode"><pre>    <span class="n">try</span><span class="p">{</span>
+        <span class="err">调用某些方法</span>
+        <span class="p">}</span><span class="n">finally</span><span class="p">{</span>
+            <span class="k">do</span> <span class="n">something</span><span class="p">...</span>
+        <span class="p">}</span>
+</pre></div>
+
+
+<h3 id="final">final</h3>
+<ul>
+<li>final 变量</li>
+</ul>
+<p>final变量就是常量，是不可以改变其值的，例如：</p>
+<div class="hlcode"><pre>    <span class="n">public</span> <span class="n">final</span> <span class="kt">int</span> <span class="n">VAL</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+
+
+<ul>
+<li>final 对象</li>
+</ul>
+<p>final对象表示final所指向的地址不会变，d永远指向sample，但是sample的值是可以改变的，例如：</p>
+<div class="hlcode"><pre>    <span class="n">public</span> <span class="n">final</span> <span class="n">Sample</span> <span class="n">d</span><span class="o">=</span><span class="n">sample</span>
+</pre></div>
+
+
+<ul>
+<li>空白final</li>
+</ul>
+<p>可以创建一个空白的final，例如：public final int a，但是必须在域的定义处或者构造器内初始化；</p>
+<ul>
+<li>final 参数</li>
+</ul>
+<p>表示在方法内不允许改变m的指向</p>
+<div class="hlcode"><pre>    <span class="n">public</span> <span class="n">String</span> <span class="n">method</span><span class="err">（</span><span class="n">final</span> <span class="n">Memo</span> <span class="n">m</span><span class="err">）</span><span class="p">{</span>
+        <span class="n">m</span><span class="o">=</span><span class="n">new</span> <span class="n">Memo</span><span class="err">（）</span><span class="c1">//不允许这么写！</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<ul>
+<li>final 方法</li>
+</ul>
+<p>final方法表示在继承中此方法不允许被覆盖</p>
+<ul>
+<li>final 类</li>
+</ul>
+<p>final表示此类不允许被继承</p>
     </div>
 
         </div>

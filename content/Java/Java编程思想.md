@@ -49,13 +49,66 @@ date: 2099-06-02 00:00
 ##初始化顺序##
 
 类初始化：
+
 1. 父类--静态变量
+
 2. 父类--静态初始化块
+
 3. 子类--静态变量
+
 4. 子类--静态初始化块
+
 5. 父类--变量
+
 6. 父类--初始化块
+
 7. 父类--构造器
+
 8. 子类--变量
+
 9. 子类--初始化块
+
 10. 子类--构造器
+
+##用法总结##
+
+###finally###
+		try{
+			调用某些方法
+			}finally{
+				do something...
+			}
+
+###final###
+
+* final 变量
+
+final变量就是常量，是不可以改变其值的，例如：
+
+		public final int VAL=1
+
+* final 对象
+
+final对象表示final所指向的地址不会变，d永远指向sample，但是sample的值是可以改变的，例如：
+
+		public final Sample d=sample
+
+* 空白final
+
+可以创建一个空白的final，例如：public final int a，但是必须在域的定义处或者构造器内初始化；
+
+* final 参数
+
+表示在方法内不允许改变m的指向
+
+		public String method（final Memo m）{
+			m=new Memo（）//不允许这么写！
+		}
+
+* final 方法
+
+final方法表示在继承中此方法不允许被覆盖
+
+* final 类
+
+final表示此类不允许被继承
