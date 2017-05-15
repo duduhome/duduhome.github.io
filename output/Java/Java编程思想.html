@@ -33,11 +33,13 @@
 <li><a href="#_4">构造器内调用构造器</a></li>
 <li><a href="#_5">初始化变量</a></li>
 <li><a href="#_6">初始化顺序</a></li>
+</ul>
+</li>
 <li><a href="#_7">用法总结</a><ul>
 <li><a href="#finally">finally</a></li>
 <li><a href="#final">final</a></li>
-</ul>
-</li>
+<li><a href="#abstract">abstract抽象</a></li>
+<li><a href="#interface">interface接口</a></li>
 </ul>
 </li>
 </ul>
@@ -125,8 +127,8 @@
 <p>子类--构造器</p>
 </li>
 </ol>
-<h2 id="_7">用法总结</h2>
-<h3 id="finally">finally</h3>
+<h1 id="_7">用法总结</h1>
+<h2 id="finally">finally</h2>
 <div class="hlcode"><pre>    <span class="n">try</span><span class="p">{</span>
         <span class="err">调用某些方法</span>
         <span class="p">}</span><span class="n">finally</span><span class="p">{</span>
@@ -135,7 +137,7 @@
 </pre></div>
 
 
-<h3 id="final">final</h3>
+<h2 id="final">final</h2>
 <ul>
 <li>final 变量</li>
 </ul>
@@ -174,6 +176,49 @@
 <li>final 类</li>
 </ul>
 <p>final表示此类不允许被继承</p>
+<h2 id="abstract">abstract抽象</h2>
+<ul>
+<li>
+<p>含有抽象方法的类必须定义为抽象类</p>
+</li>
+<li>
+<p>抽象方法也可以包含非抽象类</p>
+</li>
+<li>
+<p>抽象方法只有定义没有实现，抽象方法在继承类中实现</p>
+<div class="hlcode"><pre><span class="n">abstract</span> <span class="n">class</span> <span class="n">Instrument</span><span class="err">（）</span><span class="p">{</span>
+    <span class="n">abstract</span> <span class="kt">int</span> <span class="n">f</span><span class="p">();</span>
+<span class="kt">int</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">){...}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h2 id="interface">interface接口</h2>
+<ul>
+<li>
+<p>接口中只有方法的定义，没有任何实现</p>
+</li>
+<li>
+<p>实现关键字implements，一个类可以实现多个接口</p>
+<div class="hlcode"><pre><span class="n">interface</span> <span class="nf">Instrument</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">f</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">interface</span> <span class="nf">Instrument2</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">f2</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">class</span> <span class="n">ins</span> <span class="n">implements</span> <span class="n">Instrument</span><span class="p">,</span><span class="n">Instrument2</span><span class="p">{</span>
+    <span class="kt">int</span> <span class="n">f</span><span class="p">(){...}</span>
+    <span class="kt">int</span> <span class="n">f2</span><span class="p">(){....}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</li>
+</ul>
     </div>
 
         </div>

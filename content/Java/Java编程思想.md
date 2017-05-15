@@ -70,16 +70,16 @@ date: 2099-06-02 00:00
 
 10. 子类--构造器
 
-##用法总结##
+#用法总结#
 
-###finally###
+##finally##
 		try{
 			调用某些方法
 			}finally{
 				do something...
 			}
 
-###final###
+##final##
 
 * final 变量
 
@@ -112,3 +112,35 @@ final方法表示在继承中此方法不允许被覆盖
 * final 类
 
 final表示此类不允许被继承
+
+##abstract抽象##
+
+* 含有抽象方法的类必须定义为抽象类
+
+* 抽象方法也可以包含非抽象类
+
+* 抽象方法只有定义没有实现，抽象方法在继承类中实现
+
+		abstract class Instrument（）{
+			abstract int f();
+		int f(int i){...}
+		}
+
+##interface接口##
+
+*	接口中只有方法的定义，没有任何实现
+
+* 实现关键字implements，一个类可以实现多个接口
+
+		interface Instrument(){
+			int f();
+		}
+
+		interface Instrument2(){
+			int f2();
+		}
+
+		class ins implements Instrument,Instrument2{
+			int f(){...}
+			int f2(){....}
+		}
