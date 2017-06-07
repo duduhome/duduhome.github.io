@@ -26,8 +26,12 @@
     <div id="content">
         <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#_1">基本命令</a></li>
-<li><a href="#_2">端口</a><ul>
-<li><a href="#_3">查看端口</a></li>
+<li><a href="#_2">档案权限</a><ul>
+<li><a href="#_3">文件属性</a></li>
+</ul>
+</li>
+<li><a href="#_4">端口</a><ul>
+<li><a href="#_5">查看端口</a></li>
 <li><a href="#kill">kill程序</a></li>
 </ul>
 </li>
@@ -36,10 +40,38 @@
 <h1 id="_1">基本命令</h1>
 <h2></h2>
 <ul>
-<li>查看当前目录  pwd</li>
+<li>
+<p>pwd 查看当前目录</p>
+</li>
+<li>
+<p>date 当前时间</p>
+</li>
+<li>
+<p>cal 日历</p>
+</li>
+<li>
+<p>ls 查看当前文件夹下所有文件（-l 详细信息，-al 包括隐藏文件的详细信息）</p>
+</li>
 </ul>
-<h1 id="_2">端口</h1>
-<h2 id="_3">查看端口</h2>
+<h1 id="_2">档案权限</h1>
+<h2 id="_3">文件属性</h2>
+<div class="hlcode"><pre><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="n">wr</span><span class="o">--</span> <span class="n">user</span> <span class="n">group</span> <span class="mi">4223</span> <span class="n">Sep</span> <span class="mi">4</span> <span class="mi">12</span><span class="o">:</span><span class="mi">23</span> <span class="n">install</span><span class="p">.</span><span class="n">log</span>
+</pre></div>
+
+
+<ul>
+<li>1位：文件类型， -：文档，d:目录</li>
+<li>234位：拥有者权限，账号信息记录在/etc/passwd,密码记录在/etc/shadow</li>
+<li>567位：群组权限，群组信息记录在 /etc/group</li>
+<li>890位：其他人权限</li>
+<li>user：拥有者</li>
+<li>group：群组</li>
+<li>4223：文件大小</li>
+<li>时间：最后一次修改时间</li>
+<li>install.log: 文件名称</li>
+</ul>
+<h1 id="_4">端口</h1>
+<h2 id="_5">查看端口</h2>
 <div class="hlcode"><pre> <span class="n">lsof</span> <span class="o">-</span><span class="n">i</span> <span class="n">tcp</span><span class="o">:</span><span class="n">port</span>
 </pre></div>
 
